@@ -27,7 +27,7 @@
             left outer join emo_like el on (em.emo_id = el.emo_id AND el.user_id = #{userId})
             left outer join (
                 select
-                    emo_id, COUNT(emo_id) as like_count
+                    emo_id, count(emo_id) as like_count
                 from
                     emo_like
                 group by
@@ -39,13 +39,7 @@
             or company like concat('%', #{searchValue}, '%'))
         </if>
         group by
-            em.emo_id,
-            em.emo_code,
-            em.emo_name,
-            em.company,
-            em.emo_date,
-            el.like_id,
-            lc.like_count
+            em.emo_id
         order by
             em.emo_date desc
         limit #{index}, #{count}

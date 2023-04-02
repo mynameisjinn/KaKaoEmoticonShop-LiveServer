@@ -38,6 +38,8 @@
         </if>
         group by
             em.emo_id
+        order by
+            lc.like_count desc
         limit #{index}, #{count}
     </select>
 
