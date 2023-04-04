@@ -5,6 +5,7 @@ import com.korit.kakaoemotionshop.security.PrincipalDetails;
 import com.korit.kakaoemotionshop.service.SearchService;
 import com.korit.kakaoemotionshop.web.dto.CMRespDto;
 import com.korit.kakaoemotionshop.web.dto.SearchEmoReqDto;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ public class SearchApi {
 
     private final SearchService searchService;
 
+    @ApiOperation(value = "검색 결과", notes = "이모티콘 검색 결과 조회")
     @GetMapping("/search")
     public ResponseEntity<CMRespDto<?>> search(SearchEmoReqDto searchEmoReqDto,
                                                @AuthenticationPrincipal PrincipalDetails principalDetails) {
@@ -32,6 +34,7 @@ public class SearchApi {
                 .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", searchService.getSearchEmos(searchEmoReqDto)));
     }
 
+    @ApiOperation(value = "검색 결과 갯수", notes = "검색 결과 갯수 조회")
     @ParamsAspect
     @GetMapping("/search/totalcount")
     public ResponseEntity<CMRespDto<Integer>> getSearchEmoTotalCount(SearchEmoReqDto searchEmoReqDto) {

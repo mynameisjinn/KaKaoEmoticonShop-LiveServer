@@ -6,6 +6,7 @@ import com.korit.kakaoemotionshop.service.NewService;
 import com.korit.kakaoemotionshop.web.dto.CMRespDto;
 import com.korit.kakaoemotionshop.web.dto.SearchEmoReqDto;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,7 @@ public class NewApi {
 
     private final NewService newService;
 
+    @ApiOperation(value = "신규페이지", notes = "신규페이지 조회")
     @GetMapping("/new/search")
     public ResponseEntity<CMRespDto<?>> getNewEmo(SearchEmoReqDto searchEmoReqDto,
                                                   @AuthenticationPrincipal PrincipalDetails principalDetails) {

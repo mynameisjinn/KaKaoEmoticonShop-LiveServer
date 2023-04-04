@@ -5,6 +5,7 @@ import com.korit.kakaoemotionshop.service.HotService;
 import com.korit.kakaoemotionshop.web.dto.CMRespDto;
 import com.korit.kakaoemotionshop.web.dto.SearchEmoReqDto;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,7 @@ public class HotApi {
 
     private final HotService hotService;
 
+    @ApiOperation(value = "인기페이지", notes = "인기페이지 조회")
     @GetMapping("/hot/search")
     public ResponseEntity<CMRespDto<?>> search(SearchEmoReqDto searchEmoReqDto,
                                                @AuthenticationPrincipal PrincipalDetails principalDetails) {

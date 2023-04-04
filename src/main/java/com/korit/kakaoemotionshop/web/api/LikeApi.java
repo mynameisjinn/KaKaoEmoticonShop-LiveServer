@@ -4,6 +4,7 @@ import com.korit.kakaoemotionshop.entity.EmoLike;
 import com.korit.kakaoemotionshop.security.PrincipalDetails;
 import com.korit.kakaoemotionshop.service.LikeService;
 import com.korit.kakaoemotionshop.web.dto.CMRespDto;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,7 @@ public class LikeApi {
     @Autowired
     private LikeService likeService;
 
+    @ApiOperation(value = "좋아요 상태", notes = "유저의 좋아요 상태 조회")
     @GetMapping("/like/{emoId}/status")
     public ResponseEntity<CMRespDto<Integer>> getLikeStatus(@PathVariable int emoId,
                                                             @AuthenticationPrincipal PrincipalDetails principalDetails) {
@@ -29,6 +31,7 @@ public class LikeApi {
                 .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully",likeStatus));
     }
 
+    @ApiOperation(value = "좋아요 요청", notes = "좋아요 요청 메소드")
     @PostMapping("/emo/{emoId}/like")
     public ResponseEntity<CMRespDto<Integer>> like(@PathVariable int emoId,
                                              @AuthenticationPrincipal PrincipalDetails principalDetails){
@@ -38,6 +41,7 @@ public class LikeApi {
                 .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully",likeCount));
     }
 
+    @ApiOperation(value = "좋아요 취소", notes = "좋아요 취소 메소드")
     @DeleteMapping("/emo/{emoId}/like")
     public ResponseEntity<CMRespDto<Integer>> dislike(@PathVariable int emoId,
                                              @AuthenticationPrincipal PrincipalDetails principalDetails){

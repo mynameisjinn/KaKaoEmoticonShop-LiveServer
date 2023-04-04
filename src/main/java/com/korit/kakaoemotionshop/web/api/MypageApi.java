@@ -6,6 +6,7 @@ import com.korit.kakaoemotionshop.service.MypageService;
 import com.korit.kakaoemotionshop.web.dto.CMRespDto;
 import com.korit.kakaoemotionshop.web.dto.SearchEmoReqDto;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,7 @@ public class MypageApi {
 
     private final MypageService  mypageService;
 
+    @ApiOperation(value = "마이페이지", notes = "유저가 좋아요한 이모티콘 조회")
     @GetMapping("/like")
     public ResponseEntity<CMRespDto<?>> getUerLike(SearchEmoReqDto searchEmoReqDto,
                                                    @AuthenticationPrincipal PrincipalDetails principalDetails) {
