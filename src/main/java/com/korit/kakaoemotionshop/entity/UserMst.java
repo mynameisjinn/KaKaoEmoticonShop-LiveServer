@@ -27,7 +27,9 @@ public class UserMst {
     private String username;
 
     @NotBlank
-    @ApiModelProperty(name = "password", value = "비밀번호", example = "1234", required = true)
+    @Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[~!@#$%^&*])[a-zA-Z0-9~!@#$%^&*]{8,16}$",
+            message="비밀번호는 영문,숫자,특수문자를 포함하여 8~16자로 작성하세요")
+    @ApiModelProperty(name = "password", value = "비밀번호", example = "hikakao@1", required = true)
     private String password;
 
     @NotBlank
