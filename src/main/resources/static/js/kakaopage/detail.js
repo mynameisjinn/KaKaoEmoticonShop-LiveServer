@@ -382,9 +382,9 @@ class ImportApi {
     IMP = null;
 
     importInfo = {
-        impUid: "imp52178410",
-        restApikey: "3152048328612243",
-        restApiSecret: "ruBsQPZhs6UhDZqu5LNfvOreTCqR7amjBllCcYz34tf3b9pqD7HlpebIe6CIwBsZiTOikcbqxEysudsz"
+        impUid: "imp37422325",
+        restApikey: "6674285722075577",
+        restApiSecret: "lubtK4XNEsL6ijBW7pKnti1tMKC4u8TYSRpnEw3BOdtPF4BXKuueDOT2hRzFoQc9QyfHpWXYHZ2r1Iv8"
     }
 
     importPayParams = {
