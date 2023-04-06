@@ -102,8 +102,8 @@ class ToggleService {
                                 <div class="profile-img">
                                     <img class="user-profile" src="https://t1.kakaocdn.net/estoreweb/images/20220905161229/profile_default.png" alt="사용자">
                                 </div>
-                                <span class="login">${principal.user.name}</span>
-                                <span class="login">${principal.user.email}</span>
+                               
+                                <span class="login">${principal.user.username}</span>
                             </div>
                         </div>
                         <div class="mypage-info">
