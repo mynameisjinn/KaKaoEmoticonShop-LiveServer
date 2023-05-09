@@ -334,6 +334,29 @@
   border-radius: 5px;
 }
 
+.number{
+  display: flex;
+  justify-content: center;
+
+  margin-right: 25px;
+  margin-bottom: 10px;
+
+  width: 15px;
+  height: 30px;
+
+  font-size: 25px;
+  font-weight: 500;
+  color: brown;
+}
+.hot-list {
+  counter-reset: numbering;
+}
+
+.hot-list .number:before{
+  counter-increment: numbering;
+  content: counter(numbering);
+}
+
 /* =============== 하단 부분 ================ */
 .footer{
   display: flex;

@@ -130,7 +130,8 @@ class MainPageService {
             contentFlex.innerHTML +=`
                 <li>
                     <a class="index-hot-link" href="http://127.0.0.1:8000/main/detail/?emoCode=${data.emoCode}">
-                        <span class="emo-id">${data.emoId}</span>
+                        <input type="hidden" class="emo-id" value="${data.emoId}">
+                        <span class="number"></span>
                         <div class="hot-sub-list">
                             <h2 class="emo-name">${data.emoName}</h2>
                             <p class="author">${data.company}</p>
